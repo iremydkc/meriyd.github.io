@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    PELİCAN İLE OLUŞTURULAN BLOG SAYFASINI KİŞİSELLEŞTİRME
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a href="index.html" id="site-title"><h1><i class="fa fa-laptop"></i> İREM YEDEKÇİ</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        <li>
+        <a href="index.html">ANA SAYFA</a>
+        </li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2017-02-23T00:00:00+03:00" pubdate>
+                            Thu 23 February 2017
+                        </time>
+                        <a href="/pelican-theme.html" rel="bookmark"><h1>PELİCAN İLE OLUŞTURULAN BLOG SAYFASINI KİŞİSELLEŞTİRME</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <blockquote>
+<p><strong>Şimdi sıra geldi Pelican ile kurduğumuz siteye birtakım görsel özellikler eklemeye. Bunu tema ekleyerek sağlayabiliriz ancak ben daha çok bana özel olmasını istediğim için mevcut tema üzerinde bazı değişikler yapmanın yollarını aradım, buldum ve sizlerle paylaşacağım. ;)</strong></p>
+</blockquote>
+<p>Öncelikle tema eklemeyi halledelim ardından kişiselleştirme kısmına geçelim. Sistemde yüklü temaları görmek ve listelemek için kullanacağımız komut;</p>
+<div class="highlight"><pre><span></span>pelican-themes -l
+</pre></div>
+
+
+<p>Burda gördüklerimiz Pelican'ı kurduğumuzda paket tarafından yüklü gelen temel temalardır. Bunlar dışında temalar kullanmak istediğimizde indirmemiz gerekir. Öncelikle github'da pelican-theme reposuna gider ve repoyu bilgisayarımıza indiririz. "zip" halinde inecektir. İçinde pelican-theme-master adında bi dizin onun içinde de temaların bulunuduğu tema isimlerinde dizinler vardır. Zip'i istedeğimiz yere çıkaralım ben hepsi bi arada bulunsun diye theme adında bir dizin oluşturdum ve oraya çıkarttım. Burada her bir temanın kendine ait dizini olacak ve bu dizinlerin içinde temaların ekran görüntüsü bulunacak. Onlara bakarak karar verebilirsiniz. Ardından terminalden aşağıdaki komut ile istediğim temanın dizinine kadar ulaşıp pelican üzerine indiriyorum.</p>
+<div class="highlight"><pre><span></span>pelican-themes --install /path
+</pre></div>
+
+
+<p><em><strong>"/path"</strong> ile gösterdim yere bulunduğu dizine kadar temanın yolunu yazacağız. Böylece temayı indirmiş oluyorum, listelediğimde artık sistemde yüklü temalar arasında yeni indirdiğim temayı da göreceğim.</em></p>
+<p>Daha sonra Pelican'ı başlattığım dizinin içinde oluşan <strong>"pelicanconf.py"</strong> dosyasını açıp aşağıda sarı ile taralı kısımdaki gibi <strong>" THEME = 'TEMA_ADI' "</strong> satırını ekliyorum. Temayı pelican üzerinden indirdiğimiz için path vermemize gerek yok.  <strong>" make devserver "</strong> komutu ile siteyi lokal olarak çalıştırdığınızda temayı eklediğinizi göreceksiniz.</p>
+<p><img alt="" src="images/theme.png" /></p>
+<blockquote>
+<p><strong>Artık sitemize uyguladığımız temayı bir nebze kişiselleştirmeye başlayabiliriz. Tabi bu istek dahilinde gerçekleştireceğiniz bir şey. Eğer ki sayfa görünümünden tamamen memnunsanız en azından size yeterliyse bu adımları gerçekleştirmeye tabiki gerek yok. Ancak temada ufak değişiklikler yapmak isterseniz neleri değiştirebileceğinizi görmek isterseniz okumaya devam etmelisiniz. Şunu söylemeliyim ki bu değişikliklerin bir kısmını yapabilmek ve anlayabilmek için temel düzeyde html bilmelisiniz. Css bilmeniz halinde yapabileceğiniz değişikliklerin miktarı artacaktır.</strong></p>
+</blockquote>
+<p>Proje dizinimizin içindeki <strong>output</strong> dizininde "make devserver" komutunu verdiğimiz zaman tema ve content'in bileşenleri html ve css kod ve etiketlerine dönüştürülerek tutulur. Tema daha çok css kodları ile saklanır. Markdown formatındaki içeriğimiz format kurallarınca html etiketlerine dönüştürülür ve formatta kullandığımız işaretlemeler de sayfaya biraz stil katar. Bu dönüşümü sağlayanın <strong>Static Web Generator</strong> olan <strong>Pelican</strong> olduğunu önceki başlağımızda söylemiştik.</p>
+<p>Yaptığım birkaç değişikliği şöyle sıralayabilirim:</p>
+<blockquote>
+<ul>
+<li>Benim kullandığım temada başlık kısmının yanında bir kahve bardağı resmi oluyordu. <img alt="" src="images/coffee-icon.png" /> Buna benzer bir şeydi. Output dizininde oluşan .html uzantılı dosyalarda kodları ve etiketleri inceleyerek <i class="icon coffee" />'ye benzer bi etiket satırı buldum. Bunu sildiğimde bardak resmi kayboldu. Ben de onun yerine bir bilgisayar resmi koyup koyamayacağımı merak edip google'da araştırdım. <link ...> ketiketlerinin olduğu yani <head></head> arasında bir yere</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre><span></span>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css&quot;&gt; 
+</pre></div>
+
+
+<blockquote>
+<p>linkini ekleyip  &lt;i class="icon coffee" etiketinde icon-coffee yerine <a href="http://fontawesome.io/icons/">bu adresten</a> seçeceğiniz bir ikonun unicode'unu yazarak tema ile gelen kahve bardağını değiştirebilirsiniz. </p>
+<ul>
+<li>
+<p>.html dosyalarında gezinirken değiştirdiğim diğer bir şey ise sayfa başlığının altında "Proudly powered by Pelican and Python." diye başlayıp pelican ve tema bilgilendirmesi yapılan iki satırı kaldırmak oldu. Bu yazıyı hmtl dosylarında bulup sildim. footer kısmında bulunuyor. Öncesinde yerini değiştirdiğimi de söylemeliyim. footer kısmından alıp body'nin en altına yerleştirdim. Ben denemedim ama css kodları ile yazının rengini değiştirebilirsiniz size kalmış deneyin :)</p>
+</li>
+<li>
+<p>Kişisel bir blog sayfası olduğu için bir profil resmi eklemek gerektiğini düşündüm. Bunun dairesel olanları görsel olarak benim daha çok hoşuma gidiyor. Ben de html kullanarak dairesel bir profil resmi eklemek için düştüm google yollarına ve aşağıdaki kodu ekledim.Sonuç benim ana sayfamdaki gibi :) </p>
+</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="nt">&lt;a</span> <span class="na">style=</span><span class="s">&quot;display: inline;&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;center&gt;&lt;img</span> <span class="na">style=</span><span class="s">&quot;width: 200px; height: 200px; border-radius: 200px;&quot;</span> <span class="na">title=</span><span class="s">&quot;Swan&quot;</span> <span class="na">src=</span><span class="s">&quot;avatar.jpg&quot;</span> <span class="na">alt=</span><span class="s">&quot;Swan&quot;</span> <span class="nt">/&gt;&lt;/center&gt;&lt;/a&gt;</span>
+</pre></div>
+
+
+</blockquote>
+<p>Yukarıdaki gibi benzer değişiklikler yapılabilir. Ek olarak değişiklikler yapmak istersek <em>html</em> ve <em>css</em> bilgisine daha fazla ihtiyaç duyarız. Özet olarak html üzerinden yapacağımız değişiklikleri output dizinimizde oluşan <strong>.html</strong> uzantılı dosyalarda yaparız. Sahip olduğumuz html bilgisi ile burdaki kodların ve etiketlerin ne demek olduğunu anlayıp kendimizce ufak değişiklikler yapabiliriz. İleri seviye html bilgisi ile de eklemeler yapabiliriz. Ancak şunu unutmamalıyız ki html bir web sitesinin iskeletidir, ona renk katan css ve js kodlarıdır. Dolayısıyla css bilgisine sahip olmak temayı baz alarak kendi zevkimize göre bir görünüm elde etmemizi sağlar. css kodlarında değişikliği ise yine output dizininde yaparız. Output dizininin içinde theme dizini onun içinde de css, font gibi birkaç dizin oluşmuş olacak. Bunların içindeki <strong>.css</strong> uzantılı dosyalarda değişiklik yapılabilir. İyi eğlenceler <strong>:)</strong></p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/pelican.html">Pelican</a></p>
+                        <p>Tags: <a href="/tag/pelican.html">pelican</a>, <a href="/tag/pelican-theme.html">pelican-theme</a>, <a href="/tag/tema.html">tema</a>, <a href="/tag/pelicanda-gorsellik.html">pelican'da görsellik</a>, </p>
+                    </aside>
+                    <hr/>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+        <script src="/theme/js/main.js"></script>
+    </body>
+</html>

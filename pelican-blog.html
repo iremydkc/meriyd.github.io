@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    GİTHUB ÜZERİNDE PELİCAN İLE STATİK BLOG NASIL OLUŞTURULUR?
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/theme/css/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        
+    <link rel="stylesheet" href="/theme/css/blog.css">
+    <link rel="stylesheet" href="/theme/css/github.css">
+        <script src="/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="index.html"><h1><i class="fa fa-laptop"></i> İREM YEDEKÇİ</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+        <li>
+        <a href="index.html">ANA SAYFA</a>
+        </li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/" target="pelican">Pelican</a> and <a href="http://python.org/" target="python">Python</a>. Theme by <a href="https://github.com/hdra/pelican-cait" target="github">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/" target="subtlepatterns">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/" target="github">Dave Grandy</a>.
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2016-11-03T15:16:00+03:00" pubdate>
+                            Thu 03 November 2016
+                        </time>
+                        <a href="/pelican-blog.html" rel="bookmark"><h1>GİTHUB ÜZERİNDE PELİCAN İLE STATİK BLOG NASIL OLUŞTURULUR?</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <h2>MERHABA YENİ BLOGGER'LAR</h2>
+<blockquote>
+<h2>Statik Web dünyasına hoşgeldiniz.</h2>
+<h1>Hadi Başlayalım!</h1>
+</blockquote>
+<p><em><strong>Öncelikle "statik web, statik blog nedir?" sorusundan başlayalım.</strong></em></p>
+<blockquote>
+<blockquote>
+<p>Statik olur da dinamik olmaz mı? Tabiki olur. Dinamik site; bilgilerin bir veritabanında tutulduğu, etkileşimli bir site yapısına sahiptir.Kullanıcının isteklerine göre veritabanı kullanılarak sayfa hazırlanıp sunulur. Bu bize şunları sağlar:</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><em>Web sitesi her kullanıcı için özel olarak oluşturulabilir. Örneğin; Facebook,Twitter, ... Yani içerik tema vb. şeyler farklılık gösterir.Üyelik gerektiren siteler dinamik yapıdadır.</em></li>
+<li><em>Kullanıclar ve gruplar birbirleri ile site üzerinden iletişim kurabilirler yani etkileşim içerisinde olabilirler.</em></li>
+<li><em>Server tabanlı diller kullanlır.PHP, ASP, ...</em></li>
+<li><em>Güncellemek kolaydır.</em><blockquote>
+<p>Statik sitelere gelince tanıtım ve bilgi amaçlı olarak kullanılırlar.Veritabanına ihtiyacı yoktur.</p>
+</blockquote>
+</li>
+<li><em>Ziyaretçi, kullanıcı etkileşimi yoktur.</em></li>
+<li><em>Bilgi ve tanıyım amaçlı olduğu için sık sık düzenleme ve güncelleme gerektirmez.Zaten site yapısı buna müsait değildir.</em></li>
+<li><em>herhangi bir değişiklikten sonra tekrar internete yüklemeyi gerektirir.</em></li>
+</ul>
+<p>Amacımız blog oluşturmak olduğu için static olarak bu işi yapacağız.Ayrıca web gün geçtikçe daha da tehlikeli oluyor.Statik sitenizde güvenlik açığı bulunmayacağı için tek saldırı şansı sunucu tarafına olabilir.Bu yüzden de statik siteler dinamiklere göre daha sade ve kullanışsız gibi görünse de daha güvenilirdir. </p>
+<p>Bu kısımda bize bir <em>"static site generator"</em> yardımcı olacak. Birçok statik site oluşturucusu mevcuttur. Jekyll, Gitbook, Hugo bunlardan bazıları. Ancak biz Pelican ile işimizi göreceğiz.</p>
+<p>Öncelikle pelicanı sistemimize kurmamız gerekmektedir. Bunun için de yine başka bir paket kurulu olmalıdır. pip paketi ile pelicanı indirme işimizi yapacağız. Sırasıyla;</p>
+<div class="highlight"><pre><span></span>sudo apt-get install pip
+
+sudo pip install pelican
+sudo pip install Markdown
+sudo pip install typogrify
+</pre></div>
+
+
+<p>komutlarını çalıştırıyoruz. Bu komutlar ile pip'i, Pelican'ı ve Pelican kullanmak için gerekli paketleri indirip kurmuş olacağız.</p>
+<p>Ardından bir dizin oluşturuyoruz. Daha sonra bu dizinin içine giriyoruz ve burada pelican-quickstart komutunu çalıştırıyoruz. Komutu yeni oluşturduğumuz dizin içinde çalıştırmak önemli. Bu komut ile terminal ekranın da bazı sorular göreceğiz.</p>
+<p><img alt="" src="images/dizinoluşturma.png" /></p>
+<p>Bu soruları cevaplıyoruz. Şu an ihtiyacımız olmayacağı için bazı sorulara hayır yanıtını vereceğiz. Aşağıdaki gibi cevaplarsak bizim için ideal olacaktır.Boş gözüken cevaplar enter ile geçilmiş ve parantez içinde büyük harf ile gösterilen seçenek cevap kabul edilmiştir.</p>
+<p><img alt="" src="images/quickstart.png" /></p>
+<p>Artık dizinimizin içinde gerekli olacak dosya ve dizninlere sahibiz.</p>
+<p><img alt="" src="images/tree.png" /></p>
+<p>Bunlardan bizim için en önemlileri :  </p>
+<p><em>CONTENT</em>:  Sayfa içeriğini bulunduracak olan dizinimizdir.</p>
+<p><em>OUTPUT</em> :   Sayfanın çıktısını verecek olan .html, .css, gibi uzantılara sahip dosyaları ve bunlarla alakalı gerekli dizinleri içeren dizinimizdir.</p>
+<p><em>pelicanconf.py</em> :   Sayfanın dili, başlığı, sitenin sayfa sayısı gibi en baştaki soruların cevaplarını içeren dosyadır.</p>
+<p>Tüm bunları hallettikten sonra geldik sayfa içeriğini oluşturmaya. html kodları ile uğraşmayacağımız için bir yazı formatı kullanmalıyız. Markdown ve reStructuredText bunlardan en popüler olanları. Ben markdown'u seviyorum ve onu kullanıyorum. </p>
+<blockquote>
+<p>+Peki nedir bu yazı formatı?</p>
+<p>-Aslında bildiğiniz metin dosyası. Kendine göre kuralları var. İçeriğin dönüştürülebilir ve tanışabilir olmasında çok yardımcı.</p>
+<p>+Peki neden bir yazı formatı kullanıyoruz?</p>
+<p>-Çünkü o uzun ve karmaşık tonlarca html kodları ile uğraşmak istemiyoruz. Yazı formatı daha basit kurallarla onun yerine alıyor ve sayfa oluşurken html kodlarını ekliyor. html kodlarının eklenmiş hali ise output'un içinde .html uzantısı ile yer alıyor. </p>
+</blockquote>
+<p>Markdown formatının kurallarına <a href="https://learn.getgrav.org/" title="Visit it!">getgrav.org</a> ve <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet/" title="Visit it!">markdown cheatsheet</a> adreslerinden ulaşabilirsiniz.</p>
+<p>Bu kurallar ile içeriğimizi oluşturduktan sonra .md uzantılı olarak kaydediyoruz. Tabiki "content" dizininin içinde yer almalı. </p>
+<p>Tüm bunlar ile aslında basic olarak sitemizi oluşturduk. Önizleme için yine proje dizinimizin içindeyken </p>
+<div class="highlight"><pre><span></span>make devserver
+</pre></div>
+
+
+<p>komutu ile siteyi local olarak görebiliriz.</p>
+<p><img alt="" src="images/makedevserver.png" /></p>
+<p>Bu bize internete yükleme yapmadan önce gözden geçirmeyi ve görsel olarak düzenleme imkanını verir. Sitemizi görebilmek için tarayıcımızın URL kısmına </p>
+<div class="highlight"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="mi">8000</span>
+</pre></div>
+
+
+<p><img alt="" src="images/localhost.png" />
+yazıyoruz ve enter'a tıklıyoruz. İşte karşımızda etten kemikten hazırladığımız blog :)</p>
+<p><img alt="" src="images/blog.png" /></p>
+<p>Artık içeriğini istediğiniz gibi doldurabilirsiniz :)</p>
+<p>Tüm bunların ardından tema eklemek güzel olacaktır. Sitemize dilediğimiz şekilde görsellik katabiliriz. Bunun için Pelican'ın hali hazırda olan temalarını kullanacağız. Ancak buna başka bir başlıkta değinmek isterim.</p>
+<p>Şimdi oluşturduğumuz pelican sayfasını Github'a atalım. Küçük bir tanıtım olarak Github bir versiyon kontrol sistemidir. GNU/Linux sistemlerde git ile kullanılabildiği gibi web sitesinden ya da bir user interface programı ile
+kullanılabilir. Ben git ile kullanıyorum ve o şekilde anlatacağım. Öncelikle;
+<div class="highlight"><pre><span></span>
+ sudo apt-get install git git-doc
+ git config --global user.name kullanıcı_adı
+ git config --global user.email kullanıcı_email@....
+ </pre></div>
+ <p>komutlarını sırasıyla yazıyoruz. Ekrana bakmayalım boş boş ne işe yarıyor bunlar diye. Soru bu değil mi? İlk komutumuz git'i sistemimize kuruyor. İkinci ve üçüncü komutumuzla git için kullanıcı adı ve kullanıcı
+ e-postamızı tanıtıyoruz. </p>
+ <p><div class="highlight"><pre><span></span>
+ ls ~/.ssh
+ ssh-keygen
+</pre></div></p>
+<p>Yukarıdaki ilk komut bize sistemde varsa ssh dosyalarını gösterir ve bunlar aşağıdakilerden birkaçı gibi olmalıdır.
+<p><div class="highlight"><pre><span></span>
+d_dsa.pub
+id_ecdsa.pub
+id_ed25519.pub
+id_rsa.pub
+</pre></div></p>
+<p>Eğer yoksa;</p>
+<p><div class="highlight"><pre><span></span>ssh-keygen
+</pre></div></p>
+
+<p>komutu ile yeni bir ssh oluşturmaya başlarız.Bu komutu girdiğimizde bizden bir keyword girmemizi ister.Bununla ssh key'ini oluşturmak için bir algoritma oluşturulur."id_rsa" ve "id_rsa.pub" adında iki dosya olurşur.
+Bunlardan "id_rsa.pub" dosyasının içinde ssh-rsa dahil sonuna kadar bizim key'imiz yer almaktadır. Bunu kopyalayıp Github'da ayarlar kısmında "SSH and GPG keys" kısmına tıklayıp "new ssh" diyoruz ve kopyaladığımız key'i buraya
+yapıştırıyoruz. Add butunonu tıkladıktan sonra geriye yalnızca bir repo oluşturup projeyi yüklemek kalıyor.Github pages için repo'muzun adı "kullanıcı_adı.github.io" şeklinde olmalı.</p>
+<img alt="" src="images/repoluşturma.png" />
+<p>Ben de kabul etmemesini sebebi zaten var olması :) Sizde kabul edecektir.Github kullanıcı adınız olacak.Gördüğünüz seçenekleri resimdeki gibi yapmanız iyi olur bence. Nedenlerini araştırabilirsiniz ya da ilerde belki ben bi yazı
+ile gelirim karşınızda. ;P </p>
+<p>Geri kalan kısım için aşağıdaki komutları sırasıyla çalıştırırız.Ancak ilk önce "cd output" komutu ile output dizinimizin içine gireriz.
+Çünkü Github'a yüklenmesi gerekenler bu dizin içerisinde.</p>
+
+<p><div class="highlight"><pre><span></span>
+git init
+git remote add origin https://...(reponuzun linki)... .git
+git add *
+git commit -m "commit_mesajı"
+git push -u origin master
+</pre></div>
+</p>
+
+<ul>
+<li><b>git init:</b> output dizininde bir git deposu oluşturur.".git" şeklindedir ve gizlidir.</li>
+<li><b>git remote add origin master reponuzun_linki.git:</b> Github'da oluşturduğunuz repo git için uzak bir repodur. Github'ı git kullanarak yöneteceğimiz için repolar arasında bir bağlantı kurmalyız.Bu komut ile Github'daki
+uzak repomuzu git'e tanıttık.</li>
+<li><b>git add *:</b> proje dosya ve dizinlerini git deposuna ekler."*" hepsini ekle anlamına gelir.</li>
+<li><b>git commit -m "commit_mesajı":</b> yapılan eklemeler ve değişikler için hem bize hem de projeyi takip etmek isteyen kişilere kolaylık sağlamak ve bilgi vermek amaçlı yorum eklememizi sağlar.</li>
+<li><b>git push -u origin master:</b>: en sonunda git deposuna eklediğimiz projemizi Github'daki uzak repomuza atar.
+</ul>
+<p><i>git push ile hata alırsanız öncesinde "git pull ~repo_linki~ komutunu girip ardından push etmeyi deneyin.Ufak bir ayrıntıya da dikkat edelim: git remote add komutunda linkin sonuna ".git" eklemeyi unutmayalım.
+</i></p>
+<p><br>Eğer git kullanmayı bilmiyorsanız kesinlikle öğrenmeniz gerekir. Çünkü projemizde yaptığımız değişiklikleri eklemek beğenmezsek çıkarmak gibi işlemlerimiz olabilir.
+<a href="https://www.google.com.tr/?gfe_rd=cr&ei=N2rQWITGLIfY8AfT2rOIAw&gws_rd=ssl" target="Google">Google</a> her zaman yardımcınız :) </p>
+
+<p><font face="tahoma" size="3" color="green"><b>Umarım yardımcı olabilmişimdir.Bloğunuzla iyi eğlenceler :)</b></font></p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="/category/pelican.html">Pelican</a></p>
+                        <p>Tags: <a href="/tag/pelican.html">pelican</a>, <a href="/tag/static.html">static</a>, <a href="/tag/blog.html">blog</a>, <a href="/tag/github.html">github</a>, </p>
+                    </aside>
+                    <hr/>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+        <script src="/theme/js/main.js"></script>
+    </body>
+</html>
